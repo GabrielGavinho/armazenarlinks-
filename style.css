@@ -36,10 +36,12 @@ html, body{
 body *{
     font-family: "Lato", sans-serif;
     color: var(--text-color);
+    
 }
 
 #container{
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
@@ -52,7 +54,7 @@ body *{
 #profile img {
     width: 112px;
     border-radius: 20px;
-    border: 1.5px solid black;
+    border: 1.5px solid black; 
     
 }
 
@@ -80,13 +82,12 @@ body *{
     top: -80%;
     right: -30%;
     z-index: 1;
-    
+    animation: slide-back 0.4s;
     
 }
 
 .light #switch button {
-    right: 31%;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 
 #switch span{
@@ -159,4 +160,26 @@ footer{
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+@keyframes slide-in {
+    from {
+        right: -30%;
+
+    }
+    to {
+        right: 30%;
+
+    }
+}
+
+@keyframes slide-back {
+    from {
+        right: 30%;
+
+    }
+    to {
+        right: -30%;
+
+    }
 }
